@@ -9,6 +9,7 @@ import ReactDOM from "react-dom";
 
 function Webpage() {
 	const name = "David Smith";
+	const date = new Date();
 
 	return (
 		<>
@@ -26,13 +27,13 @@ function Webpage() {
 					</p>
 				</header>
 			</section>
-			<Clock />
+			<Clock time={date} />
 		</>
 	);
 }
 
 //nesting components
-function Clock() {
+function Clock(props) {
 	return <p> It's currently: {new Date().toLocaleTimeString("UK")} </p>;
 }
 
